@@ -1,6 +1,3 @@
-#include <b64/cdecode.h>
-#include <b64/cencode.h>
-
 char* decode(char* input) {
   char* output = (char*)malloc(PONY_STRING_LENGTH);
   char* c=output;
