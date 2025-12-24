@@ -14,7 +14,7 @@ much easier. To use the program, simply run it and specify the directory where
 your character file is located:
 
 ```bash
-ptextract examples/example.ptc
+ptcextract examples/example.ptc
 ```
 
 There is an example pony in `examples`:
@@ -30,8 +30,8 @@ distributions. Make sure you have installed it along with the dependencies
 listed in their respective section to avoid any errors
 
 ```bash
-git clone https://github.com/7sev7nsev7n7/ptextractor.git
-cd ptextractor
+git clone https://github.com/7sev7nsev7n7/ptcextract.git
+cd ptcextract
 make
 ```
 
