@@ -14,7 +14,7 @@ much easier. To use the program, simply run it and specify the directory where
 your character file is located:
 
 ```bash
-ptextract ~/downloads/character.ptc
+ptextract examples/example.ptc
 ```
 
 There is an example pony in `examples`:
