@@ -13,7 +13,7 @@ much easier. To use the program, simply run it and specify the directory where
 your character file is located:
 
 ```bash
-ptextract ~/downloads/character.ptc
+./ptextract ~/downloads/character.ptc
 ```
 
 # Building
