@@ -12,13 +12,11 @@ int main(int argc, char *argv[]) {
     printf("file not found\n");
     return 1;
   }
-  
 
   // getting values from file
   char ponystring[PONY_STRING_LENGTH];
   fgets(ponystring, PONY_STRING_LENGTH, fptr); 
   fclose(fptr);
-  printf(ponystring);
 
   // main processing [TODO]
 
