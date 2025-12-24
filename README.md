@@ -17,6 +17,10 @@ your character file is located:
 ptextract ~/downloads/character.ptc
 ```
 
+There is an example pony in `examples`:
+
+![](assets/pony.png){heigth=25%}
+
 # Building
 
 This project does not have any dependencies, which makes building the
