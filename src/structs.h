@@ -24,7 +24,3 @@ struct pony {
   struct linkedlist booleanFields; // will store boolean values
   int cm; // color management? possibly unrequired
 };
-
-void twentyone(void) {
-  printf("you stupid\nno i'm not\nwhat's 9+10?\n21\n");
-}
