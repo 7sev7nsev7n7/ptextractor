@@ -10,7 +10,6 @@
 #define SET_FIELDS_LENGTH_BITS 6 // max 63
 #define CM_LENGTH_BITS 5 // max 31
 #define NUMBERS_BITS 6 // max 63
-#define PONY_STRING_LENGTH 2048 // ponystring char limit
 
 /* linked list implementation that will allow storing multiple fields within
  * our struct */
@@ -34,7 +33,7 @@ struct pony {
 
 /* base64 decode entire pony string. this function relies on libb64 */
 char* decode(char* input, int length) {
-  char* output = (char*)malloc(PONY_STRING_LENGTH);
+  char* output = malloc(length);
   char* c=output;
   int cnt=0;
   base64_decodestate s;
@@ -54,8 +53,8 @@ int fsize(int fd) {
   return ((st.st_mode & S_IFMT) == S_IFREG) ? st.st_size : -1;
 }
 
-/* print raw decoded base64 string */
+/* print full raw decoded base64 string */
 void print_raw_decoded_string(char *decoded, int size) {
   // skipping version bits to only print name
-  for (int pos=9; *(decoded+pos)!='\0'; pos++) printf("%c", *(decoded+pos));
+  for (int pos=9; pos<size; pos++) printf("%c", *(decoded+pos));
 }
