@@ -53,3 +53,9 @@ int fsize(int fd) {
   fstat(fd, &st);
   return ((st.st_mode & S_IFMT) == S_IFREG) ? st.st_size : -1;
 }
+
+/* print raw decoded base64 string */
+void print_raw_decoded_string(char *decoded, int size) {
+  // skipping version bits to only print name
+  for (int pos=9; *(decoded+pos)!='\0'; pos++) printf("%c", *(decoded+pos));
+}

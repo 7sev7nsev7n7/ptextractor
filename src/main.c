@@ -8,11 +8,6 @@
 
 #include "lib/libpony.h"
 
-void print_raw_decoded_string(char *decoded, int size) {
-  // skipping version bits to only print name
-  for (int pos=9; *(decoded+pos)!='\0'; pos++) printf("%c", *(decoded+pos));
-}
-
 int main(int argc, char *argv[]) {
   // argument checking
   if (argc<2) {
@@ -21,21 +16,24 @@ int main(int argc, char *argv[]) {
   } 
 
   // opening file and reading contents
-  int fd = open(argv[1], O_RDONLY); // file descriptor
+  int fd = open(argv[1], O_RDONLY);
   if (fd==-1) {
     printf("file not found\n");
     return 1;
   }
 
+  // obtain filesize
   int filesize=fsize(fd);
   if (filesize<=0) {
-    printf("invalid file\n");
+    printf("file is empty, quitting\n");
     return 1;
   }
 
+  // read and decode file
   char* ponystring = malloc(filesize);
   read(fd, ponystring, filesize);
   char *decoded = decode(ponystring, filesize);
+  close(fd); // close file as it is no longer required
 
   // debug
   print_raw_decoded_string(decoded, filesize); printf("\n");
