@@ -36,7 +36,7 @@ int main(int argc, char *argv[]) {
   close(fd); // close file as it is no longer required
 
   // debug
-  print_raw_decoded_string(decoded, filesize); printf("\n");
+  printf("raw decoded string: \n"); print_raw_decoded_string(decoded, filesize); printf("\n");
 
   return 0;
 }

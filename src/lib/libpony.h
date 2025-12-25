@@ -56,5 +56,5 @@ int fsize(int fd) {
 /* print full raw decoded base64 string */
 void print_raw_decoded_string(char *decoded, int size) {
   // skipping version bits to only print name
-  for (int pos=9; pos<size; pos++) printf("%c", *(decoded+pos));
+  for (int pos=0; pos<size; pos++) printf("%c", *(decoded+pos));
 }
