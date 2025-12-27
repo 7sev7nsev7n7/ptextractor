@@ -44,7 +44,7 @@ int fsize(int fd) {
 
 /* base64 decode entire pony string and store as uint8_t array.
  * this function relies on libb64 */
-void decode(const char* input, uint8_t* output) {
+int decode(const char* input, uint8_t* output) {
   // initialize decodestate struct
   base64_decodestate state;
   base64_init_decodestate(&state);
@@ -56,5 +56,5 @@ void decode(const char* input, uint8_t* output) {
   count=base64_decode_block(input, strlen(input), output, &state);
   c+=count;
 
-  *(output+strlen(input)-2)=EOF;
+  return count;
 }
