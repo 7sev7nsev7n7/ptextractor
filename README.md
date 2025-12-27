@@ -20,7 +20,7 @@ ptcextract examples/example.ptc
 There is an example pony in `examples`:
 
 <p align="center">
-    <img height="25%" src="assets/pony.png">
+    <img height="25%" src="assets/horse.png">
 </p>
 
 # Building
