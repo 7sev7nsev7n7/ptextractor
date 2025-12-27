@@ -23,14 +23,14 @@ int main(int argc, char *argv[]) {
     printf("processing file %s\n", argv[i]);
 
     // opening file and reading contents
-    int fd = open(argv[i], O_RDONLY);
-    if (fd==-1) {
+    int file = open(argv[i], O_RDONLY);
+    if (file==-1) {
       fprintf(stderr, "file not found\n");
       return 1;
     }
 
     // obtain filesize
-    int filesize=fsize(fd);
+    int filesize=fsize(file);
     if (filesize<=0) {
       fprintf(stderr, "file is empty, quitting\n");
       return 1;
@@ -38,12 +38,12 @@ int main(int argc, char *argv[]) {
 
     // read file
     char* ponystring = malloc(filesize);
-    read(fd, ponystring, filesize);
+    read(file, ponystring, filesize);
     // malloc() uint8_t array for decoding
     uint8_t bas64_decoded[strlen(ponystring)];
     // base64 decode string
     int decoded_length=decode(ponystring, bas64_decoded);
-    close(fd); // close file as it is no longer required
+    close(file); // close file as it is no longer required
 
     // debug print character count for pony name
     int namelen = (int)*(bas64_decoded+8)-1;
