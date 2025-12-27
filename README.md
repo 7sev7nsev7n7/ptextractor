@@ -17,6 +17,10 @@ your character file is located:
 ptcextract examples/horse.ptc
 ```
 
+You may optionally specify multiple files to be processed, however processing
+of complete exports (after selecting "Export all characters") is not yet
+supported.
+
 There is an example pony in `examples`:
 
 <p align="center">
